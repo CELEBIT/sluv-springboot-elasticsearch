@@ -1,0 +1,6 @@
+<QueryList>
+    <Query Id="test_query" DESCRIPTION="산 이름 ">
+        SELECT mountainIdx,name,address
+        FROM mountain
+    </Query>
+</QueryList>
