@@ -2,5 +2,28 @@
     <Query Id="test_query" DESCRIPTION="산 이름 ">
         SELECT mountainIdx,name,address
         FROM mountain
+
+
+        //
+        SELECT LIST.*
+        , COUNT(*)OVER() ROW_CNT
+        , ROW_NUMBER()OVER(ORDER BY NAME) AS ROW_NUM
+        FROM ( SELECT PN.KORNAME
+        , PN.KORNAME AS KORNAME_NGRAM
+        , PN.KORNAME AS KORNAME_ENG2KOR
+        , PN.KORNAME AS KORNAME_CHOSUNG
+        , PN.KORNAME AS KORNAME_JAMO
+        , PN.FULL_NM AS NAME
+        , PN.FULL_NM AS NAME_NGRAM
+        , PN.NAME_ID
+        , TO_CHAR(PN.INPUT_DT,'YYYY.MM.DD') AS INPUT_DT
+        , '1' AS LIST_TYPE
+        FROM HBGAPP.PLANT_NAME PN
+        ) LIST
+        참고해서 쿼리 바꾸기
     </Query>
+
+
+
+
 </QueryList>

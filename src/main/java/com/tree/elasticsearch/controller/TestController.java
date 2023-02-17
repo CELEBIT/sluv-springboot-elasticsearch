@@ -18,7 +18,7 @@ import com.tree.elasticsearch.service.TestService;
 @RestController
 @CrossOrigin(origins="*", allowedHeaders = "*")
 @RequiredArgsConstructor
-public class ListController {
+public class TestController {
 
     private final TestService testService;
     private final IndexService indexService;
