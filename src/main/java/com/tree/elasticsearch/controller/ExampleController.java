@@ -3,7 +3,7 @@ package com.tree.elasticsearch.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tree.elasticsearch.document.*;
 import com.tree.elasticsearch.search.SearchRequestDTO;
-import com.tree.elasticsearch.search.util.ListSearchUtil;
+import com.tree.elasticsearch.search.util.TestSearchUtil;
 import com.tree.elasticsearch.service.TestService;
 import lombok.RequiredArgsConstructor;
 import org.elasticsearch.action.search.SearchRequest;
@@ -27,13 +27,10 @@ public class ExampleController {
     public String searchList(@PathVariable("searchTerm") String searchTerm, ModelMap model) throws Exception {
         SearchRequestDTO dto = new SearchRequestDTO();
         dto.setSearchTerm(searchTerm);
-        SearchRequest request = ListSearchUtil.listSearch1(dto);
-        SearchRequest request2 = ListSearchUtil.listSearch2(dto);
+        SearchRequest request = TestSearchUtil.testSearch(dto);
         SearchHit[] searchHits = testService.searchInternal(request);
-        SearchHit[] searchHits2 = testService.searchInternal(request2);
-
         System.out.println(searchHits.length);
-        System.out.println(searchHits2.length);
+
 
 
         List<Test> test = new ArrayList<>();
@@ -45,11 +42,6 @@ public class ExampleController {
             }
         }
 
-        for (SearchHit hit : searchHits2){
-            if ("test".equals(hit.getIndex())){
-                test.add(MAPPER.readValue(hit.getSourceAsString(), Test.class));
-            }
-        }
 
         model.addAttribute("test", test);
 
