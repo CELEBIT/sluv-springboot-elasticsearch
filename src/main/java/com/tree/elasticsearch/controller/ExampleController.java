@@ -30,18 +30,13 @@ public class ExampleController {
         SearchRequest request = TestSearchUtil.testSearch(dto);
         SearchHit[] searchHits = testService.searchInternal(request);
         System.out.println(searchHits.length);
-
-
-
         List<Test> test = new ArrayList<>();
-
 
         for (SearchHit hit : searchHits){
             if ("test".equals(hit.getIndex())){
                 test.add(MAPPER.readValue(hit.getSourceAsString(), Test.class));
             }
         }
-
 
         model.addAttribute("test", test);
 

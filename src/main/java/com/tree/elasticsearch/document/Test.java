@@ -10,6 +10,7 @@ import org.springframework.data.elasticsearch.annotations.Setting;
 
 
 @Data
+//Document에 name들도 다 들어가야함 ex. korName ..
 @Document(indexName = "test")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Setting(settingPath = "static/test_settings.json")
@@ -23,7 +24,7 @@ public class Test {
 
     @Id
     @Field(type = FieldType.Keyword)
-    private int row_num;
+    private int MountainIdx;
 
 
 }

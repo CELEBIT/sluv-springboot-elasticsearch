@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import com.tree.elasticsearch.service.TestService;
 
 
-//searchHit이 뭐지?
 @RestController
 @CrossOrigin(origins="*", allowedHeaders = "*")
 @RequiredArgsConstructor
