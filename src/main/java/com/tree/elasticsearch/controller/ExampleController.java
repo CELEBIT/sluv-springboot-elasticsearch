@@ -27,7 +27,7 @@ public class ExampleController {
     public String searchList(@PathVariable("searchTerm") String searchTerm, ModelMap model) throws Exception {
         SearchRequestDTO dto = new SearchRequestDTO();
         dto.setSearchTerm(searchTerm);
-        SearchRequest request = TestSearchUtil.testSearch(dto);
+        SearchRequest request = TestSearchUtil.testSearch1(dto);
         SearchHit[] searchHits = testService.searchInternal(request);
         System.out.println(searchHits.length);
         List<Test> test = new ArrayList<>();

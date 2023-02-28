@@ -1,8 +1,7 @@
 <QueryList>
     <Query Id="test_query" DESCRIPTION="산 이름 ">
-        SELECT mountainIdx,name, name as KORNAME_NGRAM, name as NAME_NGRAM,name as KORNAME_ENG2KOR, name as KORNAME_CHOSUNG, name as KORNAME_JAMO,address
+        SELECT mountainIdx, name, name as korname_ngram, name as name_ngram ,name as korname_eng2kor, name as korname_chosung , name as korname_jamo ,address
         FROM mountain
-
 
     </Query>
 

@@ -8,8 +8,6 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import org.springframework.data.elasticsearch.annotations.Setting;
 
-import java.util.Date;
-
 
 @Data
 //Document에 name들도 다 들어가야함 ex. korName ..
