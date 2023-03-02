@@ -18,19 +18,24 @@ public class Test {
 
 
     @Field(type = FieldType.Text)
-    private String KORNAME_NGRAM;
+    private String korname_ngram;
+
 
     @Field(type = FieldType.Text)
-    private String NAME_NGRAM;
+    private String name_nram;
+
 
     @Field(type = FieldType.Text)
-    private String KORNAME_ENG2KOR;
+    private String korname_eng2kor;
+
 
     @Field(type = FieldType.Text)
-    private String KORNAME_CHOSUGN;
+    private String korname_chosung;
+
 
     @Field(type = FieldType.Text)
-    private String KORNAME_JAMO;
+    private String korname_jamo;
+
 
 
     @Field(type = FieldType.Text)

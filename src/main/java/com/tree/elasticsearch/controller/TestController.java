@@ -38,7 +38,6 @@ public class TestController {
         JSONArray result = new JSONArray();
         JSONArray test = new JSONArray();
 
-        //11개의 인덱스
         if (searchHits1.length > 0) {
             for (SearchHit hit : searchHits1){
                 switch (hit.getIndex()){
@@ -69,6 +68,13 @@ public class TestController {
         result.put(test);
 
         return result;
+    }
+
+
+    @GetMapping("/api/resetAllIndexes")
+    public String reset() throws Exception {
+        indexService.createIndexes(true);
+        return "Index Reset Done";
     }
 
 }

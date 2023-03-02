@@ -1,12 +1,8 @@
 {
   "properties" : {
-    "korname": {
-      "type": "text",
-      "copy_to": ["korname_ngram", "korname_eng2kor", "korname_chosung", "korname_jamo"]
-    },
     "name": {
       "type": "text",
-      "copy_to": "name_ngram"
+      "copy_to": ["name_ngram","korname_ngram", "korname_eng2kor", "korname_chosung", "korname_jamo"]
     },
     "name_id": {
       "type": "integer"
