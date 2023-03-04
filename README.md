@@ -1,5 +1,5 @@
 # elastic_search_study
-엘라스틱 서치 공부용 (테스트) 템플릿입니다. 크게 검색, Logstash로 elasticsearch Mysql 동기화하기 두가지 기능을 수행합니다.
+엘라스틱 서치 공부용 (테스트) 템플릿입니다. 검색 기능과 Logstash로 elasticsearch Mysql 동기화 기능, 총 두가지 기능을 수행합니다.
 
 ## version
 현재 스프링부트는 '2.7.5' 자바는 11, elasticsearch, kibana, logstash 각 7.0 버전 사용중입니다.
