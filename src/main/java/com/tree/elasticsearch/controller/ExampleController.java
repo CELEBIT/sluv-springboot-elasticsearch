@@ -46,11 +46,7 @@ public class ExampleController {
 
     @GetMapping("/testing")
     public String testing( ModelMap model) throws Exception {
-
-
-
         model.addAttribute("test", "test");
-
         return "example";
     }
 

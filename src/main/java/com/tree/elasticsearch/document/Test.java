@@ -46,7 +46,7 @@ public class Test {
 
     @Id
     @Field(type = FieldType.Keyword)
-    private int MountainIdx;
+    private int mountainidx;
 
 
 }
