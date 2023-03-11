@@ -3,8 +3,8 @@ package com.tree.elasticsearch.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tree.elasticsearch.document.*;
 import com.tree.elasticsearch.search.SearchRequestDTO;
-import com.tree.elasticsearch.search.util.TestSearchUtil;
-import com.tree.elasticsearch.service.TestService;
+import com.tree.elasticsearch.search.util.SearchUtil;
+import com.tree.elasticsearch.service.SearchService;
 import lombok.RequiredArgsConstructor;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.search.SearchHit;
@@ -20,21 +20,21 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ExampleController {
 
-    private final TestService testService;
+    private final SearchService searchService;
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
     @GetMapping("/example/{searchTerm}")
     public String searchList(@PathVariable("searchTerm") String searchTerm, ModelMap model) throws Exception {
         SearchRequestDTO dto = new SearchRequestDTO();
         dto.setSearchTerm(searchTerm);
-        SearchRequest request = TestSearchUtil.testSearch1(dto);
-        SearchHit[] searchHits = testService.searchInternal(request);
+        SearchRequest request = SearchUtil.testSearch1(dto);
+        SearchHit[] searchHits = searchService.searchInternal(request);
         System.out.println(searchHits.length);
-        List<Test> test = new ArrayList<>();
+        List<SearchItem> test = new ArrayList<>();
 
         for (SearchHit hit : searchHits){
             if ("test".equals(hit.getIndex())){
-                test.add(MAPPER.readValue(hit.getSourceAsString(), Test.class));
+                test.add(MAPPER.readValue(hit.getSourceAsString(), SearchItem.class));
             }
         }
 
