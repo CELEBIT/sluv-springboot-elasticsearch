@@ -1,44 +1,32 @@
 {
   "properties" : {
-    "name": {
+    "nickname": {
       "type": "text",
-      "copy_to": ["name_ngram","korname_ngram", "korname_eng2kor", "korname_chosung", "korname_jamo"]
+      "copy_to": ["nickname_ngram", "nickname_kr_eng2kor", "nickname_kr_chosung", "nickname_kr_jamo"]
     },
-    "name_id": {
-      "type": "integer"
-    },
-    "input_dt": {
+    "created_at": {
       "type": "date"
     },
-    "list_type": {
-      "type": "integer"
-    },
-    "row_num1": {
+    "user_status": {
       "type": "keyword"
     },
 
-
-    "korname_ngram": {
+    "nickname_ngram": {
       "type": "text",
       "analyzer": "ngram_analyzer",
       "search_analyzer": "whitespace"
     },
-    "name_ngram": {
-      "type": "text",
-      "analyzer": "ngram_analyzer",
-      "search_analyzer": "whitespace"
-    },
-    "korname_eng2kor": {
+    "nickname_kr_eng2kor": {
       "type": "text",
       "analyzer": "ngram_analyzer",
       "search_analyzer": "eng2kor_analyzer"
     },
-    "korname_chosung": {
+    "nickname_kr_chosung": {
       "type": "text",
       "analyzer": "chosung_index_analyzer",
       "search_analyzer": "whitespace"
     },
-    "korname_jamo": {
+    "nickname_kr_jamo": {
       "type": "text",
       "analyzer": "jamo_index_analyzer",
       "search_analyzer": "jamo_search_analyzer"

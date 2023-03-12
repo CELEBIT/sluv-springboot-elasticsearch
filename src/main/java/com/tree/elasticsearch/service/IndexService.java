@@ -24,7 +24,7 @@ public class IndexService {
 //    public void createIndices() { createIndexes(false); }
 
     private String loadMappings(String indexName) {
-        final String mappings = Util.loadAsString("static/mappings/test.json");
+        final String mappings = Util.loadAsString("static/mappings/"+indexName+".json");
         if (mappings == null) {
             LOG.error("Failed to load mappings...");
             return null;
@@ -34,12 +34,12 @@ public class IndexService {
 
     //인덱스 생성
     public void createIndexes(final boolean deleteExisting) {
-
-            String settings = Util.loadAsString("static/test_settings.json");
+        for (int i = 1; i < 12; i++) {
+            String settings = Util.loadAsString("static/search" + Integer.toString(i) + "_settings.json");
             if (settings == null) {
-                LOG.error("Failed to load settings for test");
+                LOG.error("Failed to load settings for search" + Integer.toString(i));
             }
-            String indexName = "test";
+            String indexName = "search" + Integer.toString(i);
             try {
                 boolean indexExists = client.indices().exists(new GetIndexRequest(indexName), RequestOptions.DEFAULT);
                 if (indexExists) {
@@ -58,5 +58,6 @@ public class IndexService {
             } catch (Exception e) {
                 LOG.error(e.getMessage(), e);
             }
+        }
     }
 }

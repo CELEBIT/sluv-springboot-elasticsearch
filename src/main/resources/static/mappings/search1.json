@@ -1,0 +1,96 @@
+{
+  "properties": {
+
+    "item_id": {
+      "type": "integer"
+    },
+    "item_status": {
+      "type": "keyword"
+    },
+    "where_discovery": {
+      "type": "text",
+      "copy_to": "where_discovery_ngram"
+    },
+    "item_name": {
+      "type": "text",
+      "copy_to": ["item_name_ngram","item_name_kr_ngram", "item_name_kr_eng2kor", "item_name_kr_chosung", "item_name_kr_jamo"]
+    },
+    "brand_en": {
+      "type": "text",
+      "copy_to": ["brand_en_ngram"]
+    },
+    "celeb_name_kr": {
+      "type": "text",
+      "copy_to": ["celeb_name_kr_ngram", "celeb_name_kr_eng2kor", "celeb_name_kr_chosung", "celeb_name_kr_jamo"]
+    },
+    "celeb_name_en": {
+      "type": "text",
+      "copy_to": ["celeb_name_en_ngram"]
+    },
+    "created_at": {
+      "type": "date"
+    },
+
+    "where_discovery_ngram": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "item_name_ngram": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "item_name_kr_ngram": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "item_name_kr_eng2kor": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "eng2kor_analyzer"
+    },
+    "item_name_kr_chosung": {
+      "type": "text",
+      "analyzer": "chosung_index_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "item_name_kr_jamo": {
+      "type": "text",
+      "analyzer": "jamo_index_analyzer",
+      "search_analyzer": "jamo_search_analyzer"
+    },
+    "brand_en_ngram": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "celeb_name_en": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "celeb_name_kr_ngram": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "celeb_name_kr_eng2kor": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "eng2kor_analyzer"
+    },
+    "celeb_name_kr_chosung": {
+      "type": "text",
+      "analyzer": "chosung_index_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "celeb_name_kr_jamo": {
+      "type": "text",
+      "analyzer": "jamo_index_analyzer",
+      "search_analyzer": "jamo_search_analyzer"
+    }
+
+  }
+}

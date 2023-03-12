@@ -24,6 +24,8 @@
         },
         "ngram_analyzer" : {
           "type" : "custom",
+          "min_gram": 2,
+          "max_gram": 30,
           "tokenizer" : "ngram_tokenizer",
           "filter" : [
             "lowercase", "trim"

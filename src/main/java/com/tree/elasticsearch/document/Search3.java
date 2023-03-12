@@ -10,10 +10,11 @@ import org.springframework.data.elasticsearch.annotations.Setting;
 
 
 @Data
+//Document에 name들도 다 들어가야함 ex. korName ..
 @Document(indexName = "searchItem")
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Setting(settingPath = "static/searchItem_settings.json")
-public class SearchItem {
+@Setting(settingPath = "static/search3_settings.json")
+public class Search3 {
 
 
     @Field(type = FieldType.Text)

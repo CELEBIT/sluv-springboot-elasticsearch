@@ -30,11 +30,11 @@ public class ExampleController {
         SearchRequest request = SearchUtil.testSearch1(dto);
         SearchHit[] searchHits = searchService.searchInternal(request);
         System.out.println(searchHits.length);
-        List<SearchItem> test = new ArrayList<>();
+        List<Search1> test = new ArrayList<>();
 
         for (SearchHit hit : searchHits){
             if ("test".equals(hit.getIndex())){
-                test.add(MAPPER.readValue(hit.getSourceAsString(), SearchItem.class));
+                test.add(MAPPER.readValue(hit.getSourceAsString(), Search1.class));
             }
         }
 
