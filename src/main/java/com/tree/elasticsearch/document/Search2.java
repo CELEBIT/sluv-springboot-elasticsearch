@@ -11,42 +11,41 @@ import org.springframework.data.elasticsearch.annotations.Setting;
 
 @Data
 //Document에 name들도 다 들어가야함 ex. korName ..
-@Document(indexName = "searchItem")
+@Document(indexName = "search2")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Setting(settingPath = "static/search2_settings.json")
 public class Search2 {
 
-
-    @Field(type = FieldType.Text)
-    private String korname_ngram;
-
-
-    @Field(type = FieldType.Text)
-    private String name_nram;
-
-
-    @Field(type = FieldType.Text)
-    private String korname_eng2kor;
-
-
-    @Field(type = FieldType.Text)
-    private String korname_chosung;
-
-
-    @Field(type = FieldType.Text)
-    private String korname_jamo;
-
-
-
-    @Field(type = FieldType.Text)
-    private String name;
-
-    @Field(type = FieldType.Text)
-    private String address;
-
     @Id
+    @Field(type = FieldType.Integer)
+    private int question_id;
+
+    @Field(type = FieldType.Text)
+    private String title;
+
+    @Field(type = FieldType.Text)
+    private String title_ngram;
+
+
+    @Field(type = FieldType.Text)
+    private String title_kr_eng2kor;
+
+
+    @Field(type = FieldType.Text)
+    private String title_kr_chosung;
+
+
+    @Field(type = FieldType.Text)
+    private String title_kr_jamo;
+
+
     @Field(type = FieldType.Keyword)
-    private int mountainidx;
+    private String question_status;
+
+
+    @Field(type = FieldType.Date)
+    private String question_created_at;
+
 
 
 }

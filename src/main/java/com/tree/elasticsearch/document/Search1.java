@@ -8,6 +8,8 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 import org.springframework.data.elasticsearch.annotations.Setting;
 
+import java.util.Date;
+
 
 @Data
 @Document(indexName = "search1")
@@ -15,6 +17,9 @@ import org.springframework.data.elasticsearch.annotations.Setting;
 @Setting(settingPath = "static/search1_settings.json")
 public class Search1 {
 
+    @Id
+    @Field(type = FieldType.Integer)
+    private int item_id;
 
     @Field(type = FieldType.Keyword)
     private String item_status;
@@ -24,29 +29,86 @@ public class Search1 {
     private String where_discovery;
 
 
-
     @Field(type = FieldType.Text)
-    private String korname_eng2kor;
-
-
-    @Field(type = FieldType.Text)
-    private String korname_chosung;
+    private String where_discovery_ngram;
 
 
     @Field(type = FieldType.Text)
-    private String korname_jamo;
+    private String item_name;
 
+    @Field(type = FieldType.Text)
+    private String item_name_kr_ngram;
+
+    @Field(type = FieldType.Text)
+    private String item_name_kr_eng2kor;
+
+    @Field(type = FieldType.Text)
+    private String item_name_kr_chosung;
 
 
     @Field(type = FieldType.Text)
-    private String name;
+    private String item_name_kr_jamo;
+
 
     @Field(type = FieldType.Text)
-    private String address;
+    private String item_name_ngram;
 
-    @Id
-    @Field(type = FieldType.Keyword)
-    private int mountainidx;
+    @Field(type = FieldType.Text)
+    private String brand_kr;
+
+    @Field(type = FieldType.Text)
+    private String brand_kr_ngram;
+
+    @Field(type = FieldType.Text)
+    private String brand_kr_eng2kor;
+
+    @Field(type = FieldType.Text)
+    private String bran_kr_chosung;
+
+    @Field(type = FieldType.Text)
+    private String bran_kr_jamo;
+
+    @Field(type = FieldType.Text)
+    private String brand_en;
+
+    @Field(type = FieldType.Text)
+    private String brand_en_ngram;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_ngram;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_eng2kor;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_chosung;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_jamo;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_en;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_en_ngram;
+
+    @Field(type = FieldType.Text)
+    private String category_name_kr_ngram;
+
+    @Field(type = FieldType.Text)
+    private String category_name_kr_eng2kor;
+
+    @Field(type = FieldType.Text)
+    private String category_name_kr_chosung;
+
+    @Field(type = FieldType.Text)
+    private String category_name_kr_jamo;
+
+    @Field(type = FieldType.Date)
+    private Date create_at;
+
+
+
 
 
 }
