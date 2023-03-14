@@ -178,6 +178,7 @@ public class SearchController {
         dto.setSearchTerm(searchTerm);
 
         // 먼저 똑같은 것만 검색
+
         SearchRequest request3 = SearchUtil.firstSearch3(dto);
         // 다른 경우 검색 (어떤 방식 사용할건지 테스트 해봐야함. )
         // SearchRequest request2 = SearchUtil.firstSearch2(dto);
