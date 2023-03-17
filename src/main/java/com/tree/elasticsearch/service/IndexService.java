@@ -34,7 +34,7 @@ public class IndexService {
 
     //인덱스 생성
     public void createIndexes(final boolean deleteExisting) {
-        for (int i = 1; i < 12; i++) {
+        for (int i = 1; i < 3; i++) {
             String settings = Util.loadAsString("static/search" + Integer.toString(i) + "_settings.json");
             if (settings == null) {
                 LOG.error("Failed to load settings for search" + Integer.toString(i));

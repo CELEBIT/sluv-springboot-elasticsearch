@@ -24,20 +24,23 @@ public class Search1 {
     @Field(type = FieldType.Keyword)
     private String item_status;
 
-
     @Field(type = FieldType.Text)
     private String where_discovery;
-
 
     @Field(type = FieldType.Text)
     private String where_discovery_ngram;
 
+    @Field(type = FieldType.Text)
+    private String where_discovery_kr_eng2kor;
+
+    @Field(type = FieldType.Text)
+    private String where_discovery_kr_chosung;
+
+    @Field(type = FieldType.Text)
+    private String where_discovery_kr_jamo;
 
     @Field(type = FieldType.Text)
     private String item_name;
-
-    @Field(type = FieldType.Text)
-    private String item_name_kr_ngram;
 
     @Field(type = FieldType.Text)
     private String item_name_kr_eng2kor;
@@ -45,10 +48,8 @@ public class Search1 {
     @Field(type = FieldType.Text)
     private String item_name_kr_chosung;
 
-
     @Field(type = FieldType.Text)
     private String item_name_kr_jamo;
-
 
     @Field(type = FieldType.Text)
     private String item_name_ngram;
@@ -93,7 +94,10 @@ public class Search1 {
     private String celeb_name_en_ngram;
 
     @Field(type = FieldType.Text)
-    private String category_name_kr_ngram;
+    private String category_name;
+
+    @Field(type = FieldType.Text)
+    private String category_name_ngram;
 
     @Field(type = FieldType.Text)
     private String category_name_kr_eng2kor;
@@ -103,6 +107,21 @@ public class Search1 {
 
     @Field(type = FieldType.Text)
     private String category_name_kr_jamo;
+
+    @Field(type = FieldType.Text)
+    private String sub_category_name;
+
+    @Field(type = FieldType.Text)
+    private String sub_category_name_ngram;
+
+    @Field(type = FieldType.Text)
+    private String sub_category_name_kr_eng2kor;
+
+    @Field(type = FieldType.Text)
+    private String sub_category_name_kr_chosung;
+
+    @Field(type = FieldType.Text)
+    private String sub_category_name_kr_jamo;
 
     @Field(type = FieldType.Date)
     private Date create_at;

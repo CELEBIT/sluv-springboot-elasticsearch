@@ -38,13 +38,34 @@ public class Search2 {
     @Field(type = FieldType.Text)
     private String title_kr_jamo;
 
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_ngram;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_eng2kor;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_chosung;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_jamo;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_en;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_en_ngram;
+
 
     @Field(type = FieldType.Keyword)
     private String question_status;
 
 
     @Field(type = FieldType.Date)
-    private String question_created_at;
+    private String created_at;
 
 
 

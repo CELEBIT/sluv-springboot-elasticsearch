@@ -27,14 +27,8 @@ public class SearchController {
         SearchRequestDTO dto = new SearchRequestDTO();
         dto.setSearchTerm(searchTerm);
 
-        // 먼저 똑같은 것만 검색
         SearchRequest request1 = SearchUtil.firstSearch1(dto);
-        // 다른 경우 검색 (어떤 방식 사용할건지 테스트 해봐야함. )
-       // SearchRequest request2 = SearchUtil.firstSearch2(dto);
-
         SearchHit[] searchHits1 = searchService.searchInternal(request1);
-       // SearchHit[] searchHits2 = searchService.searchInternal(request2);
-
         JSONArray result = new JSONArray();
         JSONArray search1 = new JSONArray();
 
@@ -52,92 +46,22 @@ public class SearchController {
                 }
             }
         }
-       /* if (searchHits2.length > 0){
-            for (SearchHit hit : searchHits2){
-                switch (hit.getIndex()){
-                    case "test":
-                        test.put(hit);
-                        break;
-
-                    default:
-                        System.out.println(hit.getIndex());
-                        break;
-                }
-            }
-        }*/
 
         result.put(search1);
-
         return result;
     }
 
-    @GetMapping("/search/searchItem")
-    public JSONArray searchItem(@RequestParam String searchTerm, Model model) throws Exception {
 
-        SearchRequestDTO dto = new SearchRequestDTO();
-        dto.setSearchTerm(searchTerm);
-
-        // 먼저 똑같은 것만 검색
-        SearchRequest request1 = SearchUtil.firstSearch1(dto);
-        // 다른 경우 검색 (어떤 방식 사용할건지 테스트 해봐야함. )
-        // SearchRequest request2 = SearchUtil.firstSearch2(dto);
-
-        SearchHit[] searchHits1 = searchService.searchInternal(request1);
-        // SearchHit[] searchHits2 = searchService.searchInternal(request2);
-
-        JSONArray result = new JSONArray();
-        JSONArray search1 = new JSONArray();
-
-
-        if (searchHits1.length > 0) {
-            for (SearchHit hit : searchHits1){
-                switch (hit.getIndex()){
-                    case "search1":
-                        search1.put(hit);
-                        break;
-
-                    default:
-                        System.out.println(hit.getIndex());
-                        break;
-                }
-            }
-        }
-       /* if (searchHits2.length > 0){
-            for (SearchHit hit : searchHits2){
-                switch (hit.getIndex()){
-                    case "test":
-                        test.put(hit);
-                        break;
-
-                    default:
-                        System.out.println(hit.getIndex());
-                        break;
-                }
-            }
-        }*/
-
-        result.put(search1);
-
-        return result;
-    }
 
     @GetMapping("/search/searchQuestion")
     public JSONArray searchQuestion(@RequestParam String searchTerm, Model model) throws Exception {
 
         SearchRequestDTO dto = new SearchRequestDTO();
         dto.setSearchTerm(searchTerm);
-
-        // 먼저 똑같은 것만 검색
         SearchRequest request2 = SearchUtil.firstSearch2(dto);
-        // 다른 경우 검색 (어떤 방식 사용할건지 테스트 해봐야함. )
-        // SearchRequest request2 = SearchUtil.firstSearch2(dto);
-
         SearchHit[] searchHits2 = searchService.searchInternal(request2);
-        // SearchHit[] searchHits2 = searchService.searchInternal(request2);
-
         JSONArray result = new JSONArray();
         JSONArray search2 = new JSONArray();
-
 
         if (searchHits2.length > 0) {
             for (SearchHit hit : searchHits2){
@@ -152,22 +76,8 @@ public class SearchController {
                 }
             }
         }
-       /* if (searchHits2.length > 0){
-            for (SearchHit hit : searchHits2){
-                switch (hit.getIndex()){
-                    case "test":
-                        test.put(hit);
-                        break;
-
-                    default:
-                        System.out.println(hit.getIndex());
-                        break;
-                }
-            }
-        }*/
 
         result.put(search2);
-
         return result;
     }
 
@@ -176,19 +86,10 @@ public class SearchController {
 
         SearchRequestDTO dto = new SearchRequestDTO();
         dto.setSearchTerm(searchTerm);
-
-        // 먼저 똑같은 것만 검색
-
         SearchRequest request3 = SearchUtil.firstSearch3(dto);
-        // 다른 경우 검색 (어떤 방식 사용할건지 테스트 해봐야함. )
-        // SearchRequest request2 = SearchUtil.firstSearch2(dto);
-
         SearchHit[] searchHits3 = searchService.searchInternal(request3);
-        // SearchHit[] searchHits2 = searchService.searchInternal(request2);
-
         JSONArray result = new JSONArray();
         JSONArray search3 = new JSONArray();
-
 
         if (searchHits3.length > 0) {
             for (SearchHit hit : searchHits3){
@@ -203,19 +104,6 @@ public class SearchController {
                 }
             }
         }
-       /* if (searchHits2.length > 0){
-            for (SearchHit hit : searchHits2){
-                switch (hit.getIndex()){
-                    case "test":
-                        test.put(hit);
-                        break;
-
-                    default:
-                        System.out.println(hit.getIndex());
-                        break;
-                }
-            }
-        }*/
 
         result.put(search3);
 

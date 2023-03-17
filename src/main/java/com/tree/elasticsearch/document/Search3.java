@@ -36,8 +36,6 @@ public class Search3 {
     @Field(type = FieldType.Text)
     private String nickname_kr_jamo;
 
-
-
     @Field(type = FieldType.Date)
     private String created_at;
 
