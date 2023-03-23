@@ -21,9 +21,6 @@
     "question_id": {
       "type": "integer"
     },
-    "question_status": {
-      "type": "keyword"
-    },
 
     "title_ngram": {
       "type": "text",

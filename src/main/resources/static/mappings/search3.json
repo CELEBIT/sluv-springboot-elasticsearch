@@ -10,6 +10,9 @@
     "user_status": {
       "type": "keyword"
     },
+    "user_id": {
+      "type": "integer"
+    },
 
     "nickname_ngram": {
       "type": "text",

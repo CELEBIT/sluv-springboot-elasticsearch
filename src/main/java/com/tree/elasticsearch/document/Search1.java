@@ -64,16 +64,19 @@ public class Search1 {
     private String brand_kr_eng2kor;
 
     @Field(type = FieldType.Text)
-    private String bran_kr_chosung;
+    private String brand_kr_chosung;
 
     @Field(type = FieldType.Text)
-    private String bran_kr_jamo;
+    private String brand_kr_jamo;
 
     @Field(type = FieldType.Text)
     private String brand_en;
 
     @Field(type = FieldType.Text)
     private String brand_en_ngram;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr;
 
     @Field(type = FieldType.Text)
     private String celeb_name_kr_ngram;
@@ -124,7 +127,7 @@ public class Search1 {
     private String sub_category_name_kr_jamo;
 
     @Field(type = FieldType.Date)
-    private Date create_at;
+    private Date created_at;
 
 
 

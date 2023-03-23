@@ -1,9 +1,10 @@
 package com.tree.elasticsearch.repository;
 
-import com.tree.elasticsearch.document.Search1;
+
+import com.tree.elasticsearch.document.Search3;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SearchItemRepository extends ElasticsearchRepository<Search1, Integer> {
+public interface Search3Repository extends ElasticsearchRepository<Search3, Integer> {
 }

@@ -32,6 +32,14 @@
       "type": "text",
       "copy_to": ["celeb_name_en_ngram"]
     },
+    "category_name": {
+      "type": "text",
+      "copy_to": ["category_name_ngram", "category_name_kr_eng2kor", "category_name_kr_chosung", "category_name_kr_jamo"]
+    },
+    "sub_category_name": {
+      "type": "text",
+      "copy_to": ["sub_category_name_ngram", "sub_category_name_kr_eng2kor", "sub_category_name_kr_chosung", "sub_category_name_kr_jamo"]
+    },
     "created_at": {
       "type": "date"
     },
@@ -122,6 +130,46 @@
       "search_analyzer": "whitespace"
     },
     "celeb_name_kr_jamo": {
+      "type": "text",
+      "analyzer": "jamo_index_analyzer",
+      "search_analyzer": "jamo_search_analyzer"
+    },
+    "category_name_kr_ngram": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "category_name_kr_eng2kor": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "eng2kor_analyzer"
+    },
+    "category_name_kr_chosung": {
+      "type": "text",
+      "analyzer": "chosung_index_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "category_name_kr_jamo": {
+      "type": "text",
+      "analyzer": "jamo_index_analyzer",
+      "search_analyzer": "jamo_search_analyzer"
+    },
+    "sub_category_name_kr_ngram": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "sub_category_name_kr_eng2kor": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "eng2kor_analyzer"
+    },
+    "sub_category_name_kr_chosung": {
+      "type": "text",
+      "analyzer": "chosung_index_analyzer",
+      "search_analyzer": "whitespace"
+    },
+    "sub_category_name_kr_jamo": {
       "type": "text",
       "analyzer": "jamo_index_analyzer",
       "search_analyzer": "jamo_search_analyzer"

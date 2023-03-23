@@ -10,7 +10,6 @@ import org.springframework.data.elasticsearch.annotations.Setting;
 
 
 @Data
-//Document에 name들도 다 들어가야함 ex. korName ..
 @Document(indexName = "search3")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Setting(settingPath = "static/search3_settings.json")
@@ -20,18 +19,17 @@ public class Search3 {
     @Field(type = FieldType.Integer)
     private String user_id;
 
-
     @Field(type = FieldType.Text)
     private String nickname;
-
 
     @Field(type = FieldType.Text)
     private String nickname_ngram;
 
+    @Field(type = FieldType.Text)
+    private String nickname_kr_eng2kor;
 
     @Field(type = FieldType.Text)
     private String nickname_kr_chosung;
-
 
     @Field(type = FieldType.Text)
     private String nickname_kr_jamo;
