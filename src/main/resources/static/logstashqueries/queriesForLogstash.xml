@@ -6,15 +6,18 @@
         item.name as item_name_ngram,
         brand_kr, brand_kr as brand_kr_ngram, brand_kr as brand_kr_eng2kor, brand_kr as brand_kr_chosung, brand_kr as brand_kr_jamo,
         brand_en, brand_en as brand_en_ngram,
-        celeb_name_kr, celeb_name_kr as celeb_name_kr_ngram, celeb_name_kr as celeb_name_kr_eng2kor, celeb_name_kr as celeb_name_kr_chosung, celeb_name_kr as celeb_name_kr_jamo,
-        celeb_name_en, celeb_name_en as celeb_name_en_ngram,
+        c.celeb_name_kr, c.celeb_name_kr as celeb_name_kr_ngram, c.celeb_name_kr as celeb_name_kr_eng2kor, c.celeb_name_kr as celeb_name_kr_chosung, c.celeb_name_kr as celeb_name_kr_jamo,
+        c.celeb_name_en, c.celeb_name_en as celeb_name_en_ngram,
+        c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor, c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo,
+        c2.celeb_name_en as group_celeb_name_en, c2.celeb_name_en as group_celeb_name_en_ngram,
         ic.name as category_name, ic.name as category_name_ngram, ic.name as category_name_kr_eng2kor, ic.name as category_name_kr_chosung, ic.name as category_name_kr_jamo,
-        ic2.name as sub_category_name, ic2.name as sub_category_name_ngram, ic2.name as sub_category_name_kr_eng2kor, ic2.name as sub_category_name_kr_chosung, ic2.name as sub_category_name_kr_jamo,
+        ic2.name as sub_category_name, ic2.name as sub_category_name_ngram2, ic2.name as sub_category_name_kr_eng2kor2, ic2.name as sub_category_name_kr_chosung, ic2.name as sub_category_name_kr_jamo,
         item.created_at from item
         inner join brand b on item.brand_id = b.brand_id
         inner join celeb c on item.celeb_id = c.celeb_id
-        inner join item_category ic on item.category_id=ic.item_category_id
+        inner join item_category ic on item.item_category_id=ic.item_category_id
         inner join item_category ic2 on ic.parent_id = ic2.item_category_id
+        inner join celeb c2 on c2.celeb_id = c.parent_id
     </Query>
 
     <Query Id="search2_query" DESCRIPTION="질문 검색">

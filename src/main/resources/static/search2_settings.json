@@ -24,6 +24,8 @@
         },
         "ngram_analyzer" : {
           "type" : "custom",
+          "min_gram": 1,
+          "max_gram": 3,
           "tokenizer" : "ngram_tokenizer",
           "filter" : [
             "lowercase", "trim"
@@ -55,14 +57,14 @@
         "ngram_tokenizer" : {
           "type" : "nGram",
           "min_gram" : "1",
-          "max_gram" : "50",
+          "max_gram" : "3",
           "decompound_mode" : "mixed",
           "token_chars" : [ "letter", "digit", "punctuation", "symbol" ]
         },
         "edge_ngram_tokenizer" : {
           "type" : "edge_ngram",
           "min_gram" : "1",
-          "max_gram" : "50",
+          "max_gram" : "3",
           "decompound_mode" : "mixed",
           "token_chars" : [
             "letter", "digit", "punctuation", "symbol"
@@ -73,7 +75,7 @@
         "edge_ngram_filter_front" : {
           "type" : "edge_ngram",
           "min_gram" : "1",
-          "max_gram" : "50",
+          "max_gram" : "3",
           "side" : "front"
         },
         "javacafe_chosung_filter" : {

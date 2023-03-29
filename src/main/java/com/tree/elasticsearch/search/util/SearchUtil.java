@@ -66,18 +66,24 @@ public class SearchUtil {
             final QueryBuilder query22 = QueryBuilders.matchPhraseQuery("celeb_name_kr_chosung", searchTerm).boost(2);
             final QueryBuilder query23 = QueryBuilders.termQuery("celeb_name_kr_jamo,", searchTerm).boost(2);
             final QueryBuilder query24 = QueryBuilders.matchQuery("celeb_name_en", searchTerm).boost(4);
-            final QueryBuilder query25 = QueryBuilders.matchQuery("category_name", searchTerm).boost(3);
-            final QueryBuilder query26 = QueryBuilders.matchPhraseQuery("category_name_ngram", searchTerm).boost(3);
-            final QueryBuilder query27 = QueryBuilders.matchPhraseQuery("category_name_kr_ngram", searchTerm).boost(3);
-            final QueryBuilder query28 = QueryBuilders.matchPhraseQuery("category_name_kr_eng2kor", searchTerm);
-            final QueryBuilder query29 = QueryBuilders.matchPhraseQuery("category_name_kr_chosung", searchTerm);
-            final QueryBuilder query30 = QueryBuilders.termQuery("category_name_kr_jamo,", searchTerm);
-            final QueryBuilder query31 = QueryBuilders.matchQuery("sub_category_name", searchTerm).boost(3);
-            final QueryBuilder query32 = QueryBuilders.matchPhraseQuery("sub_category_name_ngram", searchTerm).boost(3);
-            final QueryBuilder query33 = QueryBuilders.matchPhraseQuery("sub_category_name_kr_ngram", searchTerm).boost(3);
-            final QueryBuilder query34 = QueryBuilders.matchPhraseQuery("sub_category_name_kr_eng2kor", searchTerm);
-            final QueryBuilder query35 = QueryBuilders.matchPhraseQuery("sub_category_name_kr_chosung", searchTerm);
-            final QueryBuilder query36 = QueryBuilders.termQuery("sub_category_name_kr_jamo,", searchTerm);
+            final QueryBuilder query25 = QueryBuilders.matchPhraseQuery("group_celeb_name_kr_ngram,", searchTerm).boost(4);
+            final QueryBuilder query26 = QueryBuilders.matchQuery("group_celeb_name_kr", searchTerm).boost(4);
+            final QueryBuilder query27 = QueryBuilders.matchPhraseQuery("group_celeb_name_kr_eng2kor", searchTerm).boost(2);
+            final QueryBuilder query28 = QueryBuilders.matchPhraseQuery("group_celeb_name_kr_chosung", searchTerm).boost(2);
+            final QueryBuilder query29 = QueryBuilders.termQuery("group_celeb_name_kr_jamo,", searchTerm).boost(2);
+            final QueryBuilder query30 = QueryBuilders.matchQuery("group_celeb_name_en", searchTerm).boost(4);
+            final QueryBuilder query31 = QueryBuilders.matchQuery("category_name", searchTerm).boost(3);
+            final QueryBuilder query32 = QueryBuilders.matchPhraseQuery("category_name_ngram", searchTerm).boost(3);
+            final QueryBuilder query33 = QueryBuilders.matchPhraseQuery("category_name_kr_ngram", searchTerm).boost(3);
+            final QueryBuilder query34 = QueryBuilders.matchPhraseQuery("category_name_kr_eng2kor", searchTerm);
+            final QueryBuilder query35 = QueryBuilders.matchPhraseQuery("category_name_kr_chosung", searchTerm);
+            final QueryBuilder query36 = QueryBuilders.termQuery("category_name_kr_jamo,", searchTerm);
+            final QueryBuilder query37 = QueryBuilders.matchQuery("sub_category_name", searchTerm).boost(3);
+            final QueryBuilder query38 = QueryBuilders.matchPhraseQuery("sub_category_name_ngram", searchTerm).boost(3);
+            final QueryBuilder query39 = QueryBuilders.matchPhraseQuery("sub_category_name_kr_ngram", searchTerm).boost(3);
+            final QueryBuilder query40 = QueryBuilders.matchPhraseQuery("sub_category_name_kr_eng2kor", searchTerm);
+            final QueryBuilder query41 = QueryBuilders.matchPhraseQuery("sub_category_name_kr_chosung", searchTerm);
+            final QueryBuilder query42 = QueryBuilders.termQuery("sub_category_name_kr_jamo,", searchTerm);
 
 
             BoolQueryBuilder boolQuery = QueryBuilders.boolQuery()
@@ -87,6 +93,7 @@ public class SearchUtil {
                     .should(query19).should(query20).should(query21).should(query22).should(query23).should(query24)
                     .should(query25).should(query26).should(query27).should(query28).should(query29).should(query30)
                     .should(query31).should(query32).should(query33).should(query34).should(query35).should(query36)
+                    .should(query37).should(query38).should(query39).should(query40).should(query41).should(query42)
                     .minimumShouldMatch(1);
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder().query(boolQuery).trackTotalHits(true).size(1000);
             SearchRequest request = new SearchRequest("search1"); //
