@@ -12,6 +12,14 @@
       "type": "text",
       "copy_to": ["celeb_name_kr_ngram","celeb_name_kr_eng2kor", "celeb_name_kr_chosung",  "celeb_name_kr_jamo"]
     },
+    "group_celeb_name_kr": {
+      "type": "text",
+      "copy_to": ["group_celeb_name_kr_ngram", "group_celeb_name_kr_eng2kor", "group_celeb_name_kr_chosung", "group_celeb_name_kr_jamo"]
+    },
+    "group_celeb_name_en": {
+      "type": "text",
+      "copy_to": ["group_celeb_name_en_ngram"]
+    },
     "question_status": {
       "type": "keyword"
     },

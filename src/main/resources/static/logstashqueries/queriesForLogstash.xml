@@ -23,10 +23,13 @@
     <Query Id="search2_query" DESCRIPTION="질문 검색">
         select title,
         title as title_ngram, title as title_kr_eng2kor, title as title_kr_chosung, title as title_kr_jamo,
-        celeb_name_kr, celeb_name_kr as celeb_name_kr_ngram, celeb_name_kr as celeb_name_kr_eng2kor, celeb_name_kr as celeb_name_kr_chosung, celeb_name_kr as celeb_name_kr_jamo,
-        celeb_name_en, celeb_name_en as celeb_en_name_ngram,
+        c.celeb_name_kr, c.celeb_name_kr as celeb_name_kr_ngram, c.celeb_name_kr as celeb_name_kr_eng2kor, c.celeb_name_kr as celeb_name_kr_chosung, c.celeb_name_kr as celeb_name_kr_jamo,
+        c.celeb_name_en, c.celeb_name_en as celeb_en_name_ngram,
+        c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor, c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo,
+        c2.celeb_name_en as group_celeb_name_en, c2.celeb_name_en as group_celeb_name_en_ngram,
         question_status, question.created_at from question
         inner join celeb c on question.celeb_id = c.celeb_id
+        inner join celeb c2 on c2.celeb_id = c.parent_id
     </Query>
 
     <Query Id="search3_query" DESCRIPTION="유저 검색 ">

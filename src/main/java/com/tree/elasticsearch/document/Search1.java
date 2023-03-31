@@ -94,6 +94,9 @@ public class Search1 {
     private String celeb_name_en;
 
     @Field(type = FieldType.Text)
+    private String celeb_name_en_engram;
+
+    @Field(type = FieldType.Text)
     private String group_celeb_name_kr;
 
     @Field(type = FieldType.Text)
