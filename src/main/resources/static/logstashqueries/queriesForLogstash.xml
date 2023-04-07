@@ -28,8 +28,8 @@
         c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor, c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo,
         c2.celeb_name_en as group_celeb_name_en, c2.celeb_name_en as group_celeb_name_en_ngram,
         question_status, question.created_at from question
-        inner join celeb c on question.celeb_id = c.celeb_id
-        inner join celeb c2 on c2.celeb_id = c.parent_id
+        left  join celeb c on question.celeb_id = c.celeb_id
+        left join celeb c2 on c2.celeb_id = c.parent_id
     </Query>
 
     <Query Id="search3_query" DESCRIPTION="유저 검색 ">
