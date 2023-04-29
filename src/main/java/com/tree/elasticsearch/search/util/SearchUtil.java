@@ -36,7 +36,6 @@ public class SearchUtil {
     }
 
     //boost 사용하기
-    // 가중치: 셀럽 > 상품 > 카테고리  >>> 브랜드
     public static SearchRequest firstSearch1(final SearchRequestDTO dto){
         if (dto == null){
             return null;
@@ -165,7 +164,7 @@ public class SearchUtil {
             BoolQueryBuilder boolQuery = QueryBuilders.boolQuery()
                     .should(query1).should(query2).should(query3).should(query4).should(query5).minimumShouldMatch(1);
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder().query(boolQuery).trackTotalHits(true).size(1000);
-            SearchRequest request = new SearchRequest("search3"); //
+            SearchRequest request = new SearchRequest("search3");
             request.source(searchSourceBuilder);
             return request;
         } catch (Exception e) {

@@ -83,6 +83,11 @@
         },
         "javacafe_jamo_filter" : {
           "type" : "javacafe_jamo"
+        },
+        "synonym_filter": {
+          "type" : "synonym",
+          "ignore_case" : true,
+          "synonyms_path" : "analysis/synonym.txt"
         }
       }
     },
