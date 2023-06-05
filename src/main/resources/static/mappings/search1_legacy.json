@@ -125,8 +125,8 @@
     },
     "celeb_name_kr_ngram": {
       "type": "text",
-      "analyzer": "ngram_analyzer",
-      "search_analyzer": "whitespace"
+      "analyzer": "test_index_analyzer",
+      "search_analyzer": "test_search_analyzer"
     },
     "celeb_name_kr_eng2kor": {
       "type": "text",

@@ -5,12 +5,12 @@
         "kor2eng_analyzer" : {
           "type" : "custom",
           "tokenizer" : "standard",
-          "filter" : ["trim", "lowercase", "javacafe_kor2eng"]
+          "filter" : ["trim", "lowercase", "javacafe_kor2eng", "synonym_filter"]
         },
         "eng2kor_analyzer" : {
           "type" : "custom",
           "tokenizer" : "standard",
-          "filter" : [ "trim", "lowercase", "javacafe_eng2kor"]
+          "filter" : [ "trim", "lowercase", "javacafe_eng2kor", "synonym_filter"]
         },
         "chosung_index_analyzer" : {
           "type": "custom",
@@ -20,15 +20,24 @@
         "chosung_search_analyzer" : {
           "type" : "custom",
           "tokenizer" : "keyword",
-          "filter" : [ "javacafe_chosung_filter", "lowercase", "trim"]
+          "filter" : [ "javacafe_chosung_filter", "lowercase", "trim", "synonym_filter"]
         },
         "ngram_analyzer" : {
           "type" : "custom",
           "min_gram": "2",
-          "max_gram": "3",
-          "tokenizer" : "ngram_tokenizer",
+          "max_gram": "10",
+          "tokenizer" : "edge_ngram_tokenizer",
           "filter" : [
-            "lowercase", "trim"
+            "lowercase", "trim", "synonym_filter"
+          ]
+        },
+        "test_ngram_analyzer" : {
+          "type" : "custom",
+          "min_gram": "2",
+          "max_gram": "10",
+          "tokenizer" : "edge_ngram_tokenizer",
+          "filter" : [
+            "lowercase", "trim", "edge_ngram_filter_front"
           ]
         },
         "jamo_index_analyzer": {
@@ -42,7 +51,13 @@
           "type" : "custom",
           "tokenizer" : "ngram_tokenizer",
           "filter" : [
-            "javacafe_jamo_filter", "lowercase", "trim"
+            "javacafe_jamo_filter", "lowercase", "trim", "synonym_filter"
+          ]
+        },
+        "synonym_analyzer": {
+          "tokenizer" : "edge_ngram_tokenizer",
+          "filter": [
+            "synonym_filter",  "lowercase", "trim"
           ]
         },
         "html_analyzer" : {
@@ -64,7 +79,7 @@
         "edge_ngram_tokenizer" : {
           "type" : "edge_ngram",
           "min_gram" : "2",
-          "max_gram" : "3",
+          "max_gram" : "10",
           "decompound_mode" : "mixed",
           "token_chars" : [
             "letter", "digit", "punctuation", "symbol"
@@ -75,7 +90,7 @@
         "edge_ngram_filter_front" : {
           "type" : "edge_ngram",
           "min_gram" : "2",
-          "max_gram" : "3",
+          "max_gram" : "10",
           "side" : "front"
         },
         "javacafe_chosung_filter" : {
@@ -83,6 +98,11 @@
         },
         "javacafe_jamo_filter" : {
           "type" : "javacafe_jamo"
+        },
+        "synonym_filter": {
+          "type" : "synonym",
+          "ignore_case" : true,
+          "synonyms_path" : "analysis/synonym_item.txt"
         }
       }
     },

@@ -26,7 +26,7 @@
     },
     "celeb_name_kr": {
       "type": "text",
-      "copy_to": ["celeb_name_kr_ngram", "celeb_name_kr_eng2kor", "celeb_name_kr_chosung", "celeb_name_kr_jamo"]
+      "copy_to": ["celeb_name_kr_ngram", "celeb_name_kr_eng2kor", "celeb_name_kr_chosung", "celeb_name_kr_jamo", "celeb_name_kr_synom"]
     },
     "celeb_name_en": {
       "type": "text",
@@ -141,6 +141,11 @@
       "type": "text",
       "analyzer": "jamo_index_analyzer",
       "search_analyzer": "jamo_search_analyzer"
+    },
+    "celeb_name_kr_synom": {
+      "type": "text",
+      "analyzer": "synonym_analyzer",
+      "search_analyzer": "whitespace"
     },
     "group_celeb_name_en_ngram": {
       "type": "text",

@@ -15,7 +15,7 @@ import java.util.Date;
 @Document(indexName = "search1")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Setting(settingPath = "static/search1_settings.json")
-public class Search1 {
+public class search1 {
 
     @Id
     @Field(type = FieldType.Integer)
@@ -89,6 +89,9 @@ public class Search1 {
 
     @Field(type = FieldType.Text)
     private String celeb_name_kr_jamo;
+
+    @Field(type = FieldType.Text)
+    private String celeb_name_kr_sysnom;
 
     @Field(type = FieldType.Text)
     private String celeb_name_en;

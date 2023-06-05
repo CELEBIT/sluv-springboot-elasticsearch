@@ -13,7 +13,7 @@ import org.springframework.data.elasticsearch.annotations.Setting;
 @Document(indexName = "search3")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Setting(settingPath = "static/search3_settings.json")
-public class Search3 {
+public class search3 {
 
     @Id
     @Field(type = FieldType.Integer)
