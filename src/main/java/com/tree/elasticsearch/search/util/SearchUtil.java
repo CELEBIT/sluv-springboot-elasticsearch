@@ -87,6 +87,7 @@ public class SearchUtil {
             final QueryBuilder query43 = QueryBuilders.matchPhraseQuery("sub_category_name_kr_chosung", searchTerm).boost(2);
             final QueryBuilder query44 = QueryBuilders.termQuery("sub_category_name_kr_jamo,", searchTerm).boost(2);
             final QueryBuilder query45 = QueryBuilders.matchPhraseQuery("celeb_name_kr_synom", searchTerm).boost(2);
+            final QueryBuilder query46 = QueryBuilders.matchPhraseQuery("group_celeb_name_kr_synom", searchTerm).boost(2);
 
 
             BoolQueryBuilder boolQuery = QueryBuilders.boolQuery()
@@ -97,7 +98,7 @@ public class SearchUtil {
                     .should(query25).should(query26).should(query27).should(query28).should(query29).should(query30)
                     .should(query31).should(query32).should(query33).should(query34).should(query35).should(query36)
                     .should(query37).should(query38).should(query39).should(query40).should(query41).should(query42)
-                    .should(query43).should(query44).should(query45)
+                    .should(query43).should(query44).should(query45).should(query46)
                     .minimumShouldMatch(1);
             SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder().query(boolQuery).trackTotalHits(true).size(1000);
             SearchRequest request = new SearchRequest("search1"); //

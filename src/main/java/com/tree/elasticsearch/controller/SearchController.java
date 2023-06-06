@@ -8,8 +8,10 @@ import lombok.RequiredArgsConstructor;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.search.SearchHit;
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 
 
 
@@ -37,7 +39,8 @@ public class SearchController {
             for (SearchHit hit : searchHits1){
                 switch (hit.getIndex()){
                     case "search1":
-                        search1.put(hit);
+                        //search1.put(hit);
+                        search1.put(hit.getId());
                         break;
 
                     default:
@@ -67,7 +70,8 @@ public class SearchController {
             for (SearchHit hit : searchHits2){
                 switch (hit.getIndex()){
                     case "search2":
-                        search2.put(hit);
+                        //search2.put(hit);
+                        search2.put(hit.getId());
                         break;
 
                     default:
@@ -95,7 +99,8 @@ public class SearchController {
             for (SearchHit hit : searchHits3){
                 switch (hit.getIndex()){
                     case "search3":
-                        search3.put(hit);
+                        //search3.put(hit);
+                        search3.put(hit.getId());
                         break;
 
                     default:

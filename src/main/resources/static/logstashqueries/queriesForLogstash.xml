@@ -8,7 +8,7 @@
         brand_en, brand_en as brand_en_ngram,
         c.celeb_name_kr, c.celeb_name_kr as celeb_name_kr_ngram, c.celeb_name_kr as celeb_name_kr_eng2kor, c.celeb_name_kr as celeb_name_kr_chosung, c.celeb_name_kr as celeb_name_kr_jamo, c.celeb_name_kr as celeb_name_kr_synom,
         c.celeb_name_en, c.celeb_name_en as celeb_name_en_ngram,
-        c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor, c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo,
+        c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor, c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo, c2.celeb_name_kr as group_celeb_name_kr_synom,
         c2.celeb_name_en as group_celeb_name_en, c2.celeb_name_en as group_celeb_name_en_ngram,
         ic.name as category_name, ic.name as category_name_ngram, ic.name as category_name_kr_eng2kor, ic.name as category_name_kr_chosung, ic.name as category_name_kr_jamo,
         ic2.name as sub_category_name, ic2.name as sub_category_name_ngram2, ic2.name as sub_category_name_kr_eng2kor2, ic2.name as sub_category_name_kr_chosung, ic2.name as sub_category_name_kr_jamo,

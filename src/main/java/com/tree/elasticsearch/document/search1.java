@@ -115,6 +115,9 @@ public class search1 {
     private String group_celeb_name_kr_jamo;
 
     @Field(type = FieldType.Text)
+    private String group_celeb_name_kr_sysnom;
+
+    @Field(type = FieldType.Text)
     private String group_celeb_name_en;
 
     @Field(type = FieldType.Text)

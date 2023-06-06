@@ -5,12 +5,12 @@
         "kor2eng_analyzer" : {
           "type" : "custom",
           "tokenizer" : "standard",
-          "filter" : ["trim", "lowercase", "javacafe_kor2eng", "synonym_filter"]
+          "filter" : ["trim", "lowercase", "javacafe_kor2eng"]
         },
         "eng2kor_analyzer" : {
           "type" : "custom",
           "tokenizer" : "standard",
-          "filter" : [ "trim", "lowercase", "javacafe_eng2kor", "synonym_filter"]
+          "filter" : [ "trim", "lowercase", "javacafe_eng2kor"]
         },
         "chosung_index_analyzer" : {
           "type": "custom",
@@ -20,7 +20,7 @@
         "chosung_search_analyzer" : {
           "type" : "custom",
           "tokenizer" : "keyword",
-          "filter" : [ "javacafe_chosung_filter", "lowercase", "trim", "synonym_filter"]
+          "filter" : [ "javacafe_chosung_filter", "lowercase", "trim"]
         },
         "ngram_analyzer" : {
           "type" : "custom",
@@ -28,7 +28,7 @@
           "max_gram": "10",
           "tokenizer" : "edge_ngram_tokenizer",
           "filter" : [
-            "lowercase", "trim", "synonym_filter"
+            "lowercase", "trim"
           ]
         },
         "test_ngram_analyzer" : {
@@ -51,7 +51,7 @@
           "type" : "custom",
           "tokenizer" : "ngram_tokenizer",
           "filter" : [
-            "javacafe_jamo_filter", "lowercase", "trim", "synonym_filter"
+            "javacafe_jamo_filter", "lowercase", "trim"
           ]
         },
         "synonym_analyzer": {
