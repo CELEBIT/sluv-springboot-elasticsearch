@@ -139,6 +139,9 @@ public class search1 {
     private String category_name_kr_jamo;
 
     @Field(type = FieldType.Text)
+    private String category_name_kr_synom;
+
+    @Field(type = FieldType.Text)
     private String sub_category_name;
 
     @Field(type = FieldType.Text)
@@ -152,6 +155,9 @@ public class search1 {
 
     @Field(type = FieldType.Text)
     private String sub_category_name_kr_jamo;
+
+    @Field(type = FieldType.Text)
+    private String sub_category_name_kr_synom;
 
     @Field(type = FieldType.Date)
     private Date created_at;

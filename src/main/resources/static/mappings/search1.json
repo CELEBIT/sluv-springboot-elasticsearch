@@ -42,11 +42,11 @@
     },
     "category_name": {
       "type": "text",
-      "copy_to": ["category_name_ngram", "category_name_kr_eng2kor", "category_name_kr_chosung", "category_name_kr_jamo"]
+      "copy_to": ["category_name_ngram", "category_name_kr_eng2kor", "category_name_kr_chosung", "category_name_kr_jamo", "category_name_kr_synom"]
     },
     "sub_category_name": {
       "type": "text",
-      "copy_to": ["sub_category_name_ngram", "sub_category_name_kr_eng2kor", "sub_category_name_kr_chosung", "sub_category_name_kr_jamo"]
+      "copy_to": ["sub_category_name_ngram", "sub_category_name_kr_eng2kor", "sub_category_name_kr_chosung", "sub_category_name_kr_jamo", "sub_category_name_kr_synom"]
     },
     "created_at": {
       "type": "date"
@@ -192,6 +192,11 @@
       "analyzer": "jamo_index_analyzer",
       "search_analyzer": "jamo_search_analyzer"
     },
+    "category_name_kr_synom": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "synonym_item_category_analyzer"
+    },
     "group_celeb_name_kr_synom": {
       "type": "text",
       "analyzer": "ngram_analyzer",
@@ -216,7 +221,11 @@
       "type": "text",
       "analyzer": "jamo_index_analyzer",
       "search_analyzer": "jamo_search_analyzer"
+    },
+    "sub_category_name_kr_synom": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "synonym_item_category_analyzer"
     }
-
   }
 }

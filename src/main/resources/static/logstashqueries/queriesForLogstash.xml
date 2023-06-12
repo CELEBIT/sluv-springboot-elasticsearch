@@ -16,7 +16,8 @@
         inner join brand b on item.brand_id = b.brand_id
         inner join celeb c on item.celeb_id = c.celeb_id
         inner join item_category ic on item.item_category_id=ic.item_category_id
-        inner join item_category ic2 on ic.parent_id = ic2.item_category_id
+        inner join item_category ic2 on ic2.item_category_id =
+        case when ic.parent_id is not null then ic.parent_id else ic.item_category_id end
         inner join celeb c2 on c2.celeb_id =
         case when c.parent_id is not null then c.parent_id else c.celeb_id end
     </Query>

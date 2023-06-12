@@ -60,6 +60,15 @@
             "synonym_filter",  "lowercase", "trim"
           ]
         },
+        "synonym_item_category_analyzer": {
+          "type" : "custom",
+          "min_gram": "2",
+          "max_gram": "10",
+          "tokenizer" : "edge_ngram_tokenizer",
+          "filter": [
+            "synonym_item_category_filter",  "lowercase", "trim"
+          ]
+        },
         "html_analyzer" : {
           "type" : "custom",
           "tokenizer" : "standard",
@@ -67,7 +76,6 @@
           "char_filter" : [ "html_strip" ]
         }
       },
-
       "tokenizer" : {
         "ngram_tokenizer" : {
           "type" : "nGram",
@@ -103,6 +111,11 @@
           "type" : "synonym",
           "ignore_case" : true,
           "synonyms_path" : "analysis/synonym_item.txt"
+        },
+        "synonym_item_category_filter": {
+          "type" : "synonym",
+          "ignore_case" : true,
+          "synonyms_path" : "analysis/synonym_item_category.txt"
         }
       }
     },
