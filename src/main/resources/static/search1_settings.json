@@ -64,9 +64,9 @@
           "type" : "custom",
           "min_gram": "2",
           "max_gram": "10",
-          "tokenizer" : "edge_ngram_tokenizer",
+          "tokenizer" : "ngram_tokenizer",
           "filter": [
-            "synonym_item_category_filter",  "lowercase", "trim"
+            "synonym_item_category_filter",  "lowercase", "trim",  "edge_ngram_filter_front"
           ]
         },
         "html_analyzer" : {
