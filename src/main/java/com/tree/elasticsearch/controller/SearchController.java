@@ -50,8 +50,8 @@ public class SearchController {
             }
         }
 
-        result.put(search1);
-        return result;
+        //result.put(search1);
+        return search1;
     }
 
 
@@ -81,8 +81,8 @@ public class SearchController {
             }
         }
 
-        result.put(search2);
-        return result;
+        //result.put(search2);
+        return search2;
     }
 
     @GetMapping("/search/searchUser")
@@ -110,9 +110,9 @@ public class SearchController {
             }
         }
 
-        result.put(search3);
+       // result.put(search3);
 
-        return result;
+        return search3;
     }
 
 

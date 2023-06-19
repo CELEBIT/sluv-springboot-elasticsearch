@@ -38,6 +38,14 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
-bootWar.enabled = false
-war.enabled = true
+//bootWar.enabled = false
+//war.enabled = true
+//jar.enabled = false
+
+bootWar.enabled = true
+war.enabled = false
 jar.enabled = false
+
+bootWar {
+	archiveName("elasticsearch-api.war")
+}
