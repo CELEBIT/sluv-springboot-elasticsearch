@@ -1,6 +1,13 @@
 {
   "index" : {
     "analysis" : {
+      "char_filter": {
+        "whitespace_remove": {
+          "type": "pattern_replace",
+          "pattern": "\\s+",
+          "replacement": ""
+        }
+      },
       "analyzer" : {
         "kor2eng_analyzer" : {
           "type" : "custom",
@@ -25,10 +32,22 @@
         "ngram_analyzer" : {
           "type" : "custom",
           "min_gram": "2",
-          "max_gram": "3",
-          "tokenizer" : "ngram_tokenizer",
+          "max_gram": "10",
+          "tokenizer" : "edge_ngram_tokenizer",
           "filter" : [
             "lowercase", "trim"
+          ],
+          "char_filter": [
+            "whitespace_remove"
+          ]
+        },
+        "test_ngram_analyzer" : {
+          "type" : "custom",
+          "min_gram": "2",
+          "max_gram": "10",
+          "tokenizer" : "edge_ngram_tokenizer",
+          "filter" : [
+            "lowercase", "trim", "edge_ngram_filter_front"
           ]
         },
         "jamo_index_analyzer": {
@@ -45,6 +64,27 @@
             "javacafe_jamo_filter", "lowercase", "trim"
           ]
         },
+        "synonym_analyzer": {
+          "tokenizer" : "edge_ngram_tokenizer",
+          "filter": [
+            "synonym_filter",  "lowercase", "trim"
+          ],
+          "char_filter": [
+            "whitespace_remove"
+          ]
+        },
+        "synonym_item_category_analyzer": {
+          "type" : "custom",
+          "min_gram": "2",
+          "max_gram": "10",
+          "tokenizer" : "ngram_tokenizer",
+          "filter": [
+            "synonym_item_category_filter",  "lowercase", "trim",  "edge_ngram_filter_front"
+          ],
+          "char_filter": [
+            "whitespace_remove"
+          ]
+        },
         "html_analyzer" : {
           "type" : "custom",
           "tokenizer" : "standard",
@@ -52,12 +92,11 @@
           "char_filter" : [ "html_strip" ]
         }
       },
-
       "tokenizer" : {
         "ngram_tokenizer" : {
           "type" : "nGram",
           "min_gram" : "2",
-          "max_gram" : "10",
+          "max_gram" : "3",
           "decompound_mode" : "mixed",
           "token_chars" : [ "letter", "digit", "punctuation", "symbol" ]
         },
@@ -83,6 +122,16 @@
         },
         "javacafe_jamo_filter" : {
           "type" : "javacafe_jamo"
+        },
+        "synonym_filter": {
+          "type" : "synonym",
+          "ignore_case" : true,
+          "synonyms_path" : "analysis/synonym_item.txt"
+        },
+        "synonym_item_category_filter": {
+          "type" : "synonym",
+          "ignore_case" : true,
+          "synonyms_path" : "analysis/synonym_item_category.txt"
         }
       }
     },

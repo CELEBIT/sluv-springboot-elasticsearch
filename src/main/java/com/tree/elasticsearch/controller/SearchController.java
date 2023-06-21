@@ -110,13 +110,13 @@ public class SearchController {
             }
         }
 
-       // result.put(search3);
+        // result.put(search3);
 
         return search3;
     }
 
 
-    @GetMapping("/api/resetAllIndexes")
+    @GetMapping("/search/resetAllIndexes")
     public String reset() throws Exception {
         indexService.createIndexes(true);
         return "Index Reset Done";

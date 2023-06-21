@@ -67,6 +67,10 @@ public class search2 {
 
 
     @Field(type = FieldType.Text)
+    private String celeb_name_kr_sysnom;
+
+
+    @Field(type = FieldType.Text)
     private String group_celeb_name_kr;
 
 
@@ -92,6 +96,10 @@ public class search2 {
 
     @Field(type = FieldType.Text)
     private String group_celeb_name_en_ngram;
+
+
+    @Field(type = FieldType.Text)
+    private String group_celeb_name_kr_sysnom;
 
 
     @Field(type = FieldType.Keyword)
