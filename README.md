@@ -43,14 +43,14 @@ logstash - 7.0.0
     > resources
         > static
             > logstashqueries
-                | queriesForLogstash.xml // elasticsearch와 RDBMS 연동 시 사용되는 쿼리들을 정의. 
+                | queriesForLogstash.xml // elasticsearch와 RDBMS 연동 시 사용되는 쿼리들 정의. 
             > mappings 
                 | search1.json // search1에서 필드별로 사용할 분석기와 검색기 정의. 
                 | search2.json // search2에서 필드별로 사용할 분석기와 검색기 정의. 
                 | search3.json // search3에서 필드별로 사용할 분석기와 검색기 정의. 
-            | searh1_settings.json // search1에서 사용할 분석기와 검색기를 정의한다.  
-            | searh2_settings.json // search2에서 사용할 분석기와 검색기를 정의한다.  
-            | searh3_settings.json // search3에서 사용할 분석기와 검색기를 정의한다.  
+            | searh1_settings.json // search1에서 사용할 분석기와 검색기 정의. 
+            | searh2_settings.json // search2에서 사용할 분석기와 검색기 정의. 
+            | searh3_settings.json // search3에서 사용할 분석기와 검색기 정의. 
         > templates
             | example.html
         | application.properties // 스프링부트 설정 파일. 
