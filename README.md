@@ -20,7 +20,8 @@ logstash - 7.0.0
             | Config // @Configuration @EnableElasticsearchRepositories 어노테이션 사용.
         > controller 
             | ExampleController // controller 예시.
-            | SearchController // 실질적 controller 역할 수행. 클라이언트에서 restful 방식으로 요청이 오는 URI와 매핑을 해주고 service단으로 요청을 전달.
+            | SearchController // 실질적 controller 역할 수행. 클라이언트에서 restful 방식으로 요청이 오는 
+                                  URI와 매핑을 해주고 service단으로 요청을 전달.
         > document
             | search1.java // search1 index (for 아이템 검색) 의 필드 정의. 타입도 함꼐 명시. 
             | search2.java // search2 index (for 질문 검색) 의 필드 정의. 타입도 함꼐 명시. 
