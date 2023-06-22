@@ -76,6 +76,16 @@
       "type": "text",
       "analyzer": "jamo_index_analyzer",
       "search_analyzer": "jamo_search_analyzer"
+    },
+    "celeb_name_kr_synom": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "synonym_analyzer"
+    },
+    "group_celeb_name_kr_synom": {
+      "type": "text",
+      "analyzer": "ngram_analyzer",
+      "search_analyzer": "synonym_analyzer"
     }
   }
 }
