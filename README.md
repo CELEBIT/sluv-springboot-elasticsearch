@@ -3,11 +3,11 @@
 restful api로 개발되었으며 스럽 서비스 내부에서 해당 api를 호출하여 사용합니다.
 
 
-## version
+## DEV version
 - Java : OpenJDK 17
 - Springboot : 2.7.5
 
-## version
+## ELK version
 elastic search - 7.0.0
 kibana - 7.0.0
 logstash - 7.0.0
