@@ -1,42 +1,58 @@
 # elastic_search_study
-엘라스틱 서치 공부용 (테스트) 템플릿입니다. 검색 기능과 Logstash로 elasticsearch Mysql 동기화 기능, 총 두가지 기능을 수행합니다.
+[sluv] 의 내부 검색 엔진 서비스입니다. 현재 아이템 검색, 질문 검색, 유저 검색 기능을 제공하거 전문 검색, 구문 검색, 다중 단어 검색, 동의어 검색 등의 기능을 제공합니다.
+restful api로 개발되었으며 스럽 서비스 내부에서 해당 api를 호출하여 사용합니다.
+
 
 ## version
-현재 스프링부트는 '2.7.5' 자바는 11, elasticsearch, kibana, logstash 각 7.0 버전 사용중입니다.
+- Java : OpenJDK 17
+- Springboot : 2.7.5
+
+## version
+elastic search - 7.0.0
+kibana - 7.0.0
+logstash - 7.0.0
 
 ## Structure
     > build
     > gradle
     > src.main.java.com.tree.elasticsearch
         > configuration
-            | Config // @Configuration @EnableElasticsearchRepositories 어노테이션 사용합니다.
-        > controller  // controller입니다. 클라이언트에서 요청이 오는 URI와 매핑을 해주고 service로 요청을 전달합니다.
-            | ExampleController // controller 예시입니다.
-            | TestController // 실질적으로 작동되는 controller입니다.
+            | Config // @Configuration @EnableElasticsearchRepositories 어노테이션 사용.
+        > controller 
+            | ExampleController // controller 예시.
+            | SearchController // 실질적 controller 역할 수행. 클라이언트에서 restful 방식으로 요청이 오는 URI와 매핑을 해주고 service단으로 요청을 전달.
         > document
-            | Test.java // 인덱스를 정의합니다. 타입도 명시해줘야합니다. 
+            | search1.java // search1 index (for 아이템 검색) 의 필드 정의. 타입도 함꼐 명시. 
+            | search2.java // search2 index (for 질문 검색) 의 필드 정의. 타입도 함꼐 명시. 
+            | search3.java // search3 index (for 유저 검색) 의 필드 정의. 타입도 함꼐 명시. 
         > helper
-            | Util // 로그 파일 필요한 것을 정의합니다.
+            | Util 
         > repository
-            | TestRepository // 레포지토리를 정의합니다.
+            | Search1Repository 
+            | Search2Repository 
+            | Search3Repository 
         > search
             > util
-                | TestSearchUtil // 사용할 Query DSL을 정의합니다. 
-            | SearchRequestDTO // 클라이언트측에서 전달받을 데이터를 정의합니다. ex. 쿼리스트링 
-        > service // 실질적인 서비스를 하는 곳입니다.
-            | IndexService // 인덱스와 관련된 서비스를 합니다.
-            | TestService // 검색과 관련된 서비스를 합니다. 
-        | ElasticsearchApplication // 스프링부트가 시작되는 곳입니다.
+                | SearchUtil // elastic search에 검색 시 사용할 Query DSL 정의. 
+            | SearchRequestDTO // 클라이언트측에서 전달받을 데이터를 정의. (쿼리스트링으로 사용됨) 
+        > service 
+            | IndexService // 인덱스와 관련된 실질적 서비스 제공. (매핑 로드, 인덱스 생성)
+            | SearchService // 검색과 서비스 제공 
+        | ElasticsearchApplication // 스프링 부트 실행 시작되는 파일. 
     > resources
         > static
             > logstashqueries
-                | queriesForLogstash.xml // logstash를 통해 index로 만들 때 사용할 쿼리들을 정의하는 곳입니다. 
+                | queriesForLogstash.xml // elasticsearch와 RDBMS 연동 시 사용되는 쿼리들을 정의. 
             > mappings 
-                | test.json // 매핑을 정의합니다.
-            | test_settings.json // 분석기를 정의합니다. 
+                | search1.json // search1에서 필드별로 사용할 분석기와 검색기 정의. 
+                | search2.json // search2에서 필드별로 사용할 분석기와 검색기 정의. 
+                | search3.json // search3에서 필드별로 사용할 분석기와 검색기 정의. 
+            | searh1_settings.json // search1에서 사용할 분석기와 검색기를 정의한다.  
+            | searh2_settings.json // search2에서 사용할 분석기와 검색기를 정의한다.  
+            | searh3_settings.json // search3에서 사용할 분석기와 검색기를 정의한다.  
         > templates
             | example.html
-        | application.properties // 스프링부트 설정 파일입니다.
+        | application.properties // 스프링부트 설정 파일. 
     > src.test.java.com.tree.elasticsearch
         | ElasticsearchAppicationTests 
         
