@@ -6,12 +6,16 @@
         item.name as item_name_ngram,
         brand_kr, brand_kr as brand_kr_ngram, brand_kr as brand_kr_eng2kor, brand_kr as brand_kr_chosung, brand_kr as brand_kr_jamo,
         brand_en, brand_en as brand_en_ngram,
-        c.celeb_name_kr, c.celeb_name_kr as celeb_name_kr_ngram, c.celeb_name_kr as celeb_name_kr_eng2kor, c.celeb_name_kr as celeb_name_kr_chosung, c.celeb_name_kr as celeb_name_kr_jamo, c.celeb_name_kr as celeb_name_kr_synom,
+        c.celeb_name_kr, c.celeb_name_kr as celeb_name_kr_ngram, c.celeb_name_kr as celeb_name_kr_eng2kor, c.celeb_name_kr as celeb_name_kr_chosung,
+        c.celeb_name_kr as celeb_name_kr_jamo, c.celeb_name_kr as celeb_name_kr_synom,
         c.celeb_name_en, c.celeb_name_en as celeb_name_en_ngram,
-        c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor, c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo, c2.celeb_name_kr as group_celeb_name_kr_synom,
+        c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor,
+        c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo, c2.celeb_name_kr as group_celeb_name_kr_synom,
         c2.celeb_name_en as group_celeb_name_en, c2.celeb_name_en as group_celeb_name_en_ngram,
-        ic.name as category_name, ic.name as category_name_ngram, ic.name as category_name_kr_eng2kor, ic.name as category_name_kr_chosung, ic.name as category_name_kr_jamo,
-        ic2.name as sub_category_name, ic2.name as sub_category_name_ngram2, ic2.name as sub_category_name_kr_eng2kor2, ic2.name as sub_category_name_kr_chosung, ic2.name as sub_category_name_kr_jamo,
+        ic.name as category_name, ic.name as category_name_ngram, ic.name as category_name_kr_eng2kor, ic.name as category_name_kr_chosung,
+        ic.name as category_name_kr_jamo,
+        ic2.name as sub_category_name, ic2.name as sub_category_name_ngram2, ic2.name as sub_category_name_kr_eng2kor2, ic2.name as sub_category_name_kr_chosung,
+        ic2.name as sub_category_name_kr_jamo,
         item.created_at from item
         inner join brand b on item.brand_id = b.brand_id
         inner join celeb c on item.celeb_id = c.celeb_id
@@ -25,15 +29,16 @@
     <Query Id="search2_query" DESCRIPTION="질문 검색">
         select question_id, title,
         title as title_ngram, title as title_kr_eng2kor, title as title_kr_chosung, title as title_kr_jamo,
-        c.celeb_name_kr, c.celeb_name_kr as celeb_name_kr_ngram, c.celeb_name_kr as celeb_name_kr_eng2kor, c.celeb_name_kr as celeb_name_kr_chosung, c.celeb_name_kr as celeb_name_kr_jamo, c.celeb_name_kr as celeb_name_kr_synom,
+        c.celeb_name_kr, c.celeb_name_kr as celeb_name_kr_ngram, c.celeb_name_kr as celeb_name_kr_eng2kor, c.celeb_name_kr as celeb_name_kr_chosung,
+        c.celeb_name_kr as celeb_name_kr_jamo, c.celeb_name_kr as celeb_name_kr_synom,
         c.celeb_name_en, c.celeb_name_en as celeb_en_name_ngram,
-        c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor, c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo,  c2.celeb_name_kr as group_celeb_name_kr_synom,
+        c2.celeb_name_kr as group_celeb_name_kr, c2.celeb_name_kr as group_celeb_name_kr_ngram, c2.celeb_name_kr as group_celeb_name_kr_eng2kor,
+        c2.celeb_name_kr as group_celeb_name_kr_chosung, c2.celeb_name_kr as group_celeb_name_kr_jamo,  c2.celeb_name_kr as group_celeb_name_kr_synom,
         c2.celeb_name_en as group_celeb_name_en, c2.celeb_name_en as group_celeb_name_en_ngram,
         question_status, question.created_at from question
         left  join celeb c on question.celeb_id = c.celeb_id
         left join celeb c2 on c2.celeb_id =
         case when c.parent_id is not null then c.parent_id else c.celeb_id end
-
     </Query>
 
     <Query Id="search3_query" DESCRIPTION="유저 검색 ">

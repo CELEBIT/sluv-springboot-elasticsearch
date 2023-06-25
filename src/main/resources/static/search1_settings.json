@@ -41,15 +41,6 @@
             "whitespace_remove"
           ]
         },
-        "test_ngram_analyzer" : {
-          "type" : "custom",
-          "min_gram": "2",
-          "max_gram": "10",
-          "tokenizer" : "edge_ngram_tokenizer",
-          "filter" : [
-            "lowercase", "trim", "edge_ngram_filter_front"
-          ]
-        },
         "jamo_index_analyzer": {
           "type" : "custom",
           "tokenizer" : "ngram_tokenizer",
