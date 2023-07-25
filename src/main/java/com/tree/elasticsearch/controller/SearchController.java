@@ -25,25 +25,19 @@ public class SearchController {
 
     @GetMapping("/search/searchItem")
     public JSONArray searchGet(@RequestParam String searchTerm, Model model) throws Exception {
-
         try {
             SearchRequestDTO dto = new SearchRequestDTO();
             dto.setSearchTerm(searchTerm);
-
             SearchRequest request1 = SearchUtil.firstSearch1(dto);
-
             SearchHit[] searchHits1 = searchService.searchInternal(request1);
-            JSONArray result = new JSONArray();
             JSONArray search1 = new JSONArray();
 
             if (searchHits1 != null) {
                 for (SearchHit hit : searchHits1) {
                     switch (hit.getIndex()) {
                         case "search1":
-                            //search1.put(hit);
                             search1.put(hit.getId());
                             break;
-
                         default:
                             System.out.println(hit.getIndex());
                             break;
@@ -56,40 +50,30 @@ public class SearchController {
             e.printStackTrace();
             return null;
         }
-
-
-        //result.put(search1);
-
     }
-
 
 
     @GetMapping("/search/searchQuestion")
     public JSONArray searchQuestion(@RequestParam String searchTerm, Model model) throws Exception {
         try {
-
             SearchRequestDTO dto = new SearchRequestDTO();
             dto.setSearchTerm(searchTerm);
             SearchRequest request2 = SearchUtil.firstSearch2(dto);
             SearchHit[] searchHits2 = searchService.searchInternal(request2);
-            JSONArray result = new JSONArray();
             JSONArray search2 = new JSONArray();
 
             if (searchHits2 != null) {
                 for (SearchHit hit : searchHits2) {
                     switch (hit.getIndex()) {
                         case "search2":
-                            //search2.put(hit);
                             search2.put(hit.getId());
                             break;
-
                         default:
                             System.out.println(hit.getIndex());
                             break;
                     }
                 }
             }
-            //result.put(search2);
             return search2;
         }
         catch (Exception e) {
@@ -100,23 +84,19 @@ public class SearchController {
 
     @GetMapping("/search/searchUser")
     public JSONArray searchUser(@RequestParam String searchTerm, Model model) throws Exception {
-
         try {
             SearchRequestDTO dto = new SearchRequestDTO();
             dto.setSearchTerm(searchTerm);
             SearchRequest request3 = SearchUtil.firstSearch3(dto);
             SearchHit[] searchHits3 = searchService.searchInternal(request3);
-            JSONArray result = new JSONArray();
             JSONArray search3 = new JSONArray();
 
             if (searchHits3 != null ) {
                 for (SearchHit hit : searchHits3) {
                     switch (hit.getIndex()) {
                         case "search3":
-                            //search3.put(hit);
                             search3.put(hit.getId());
                             break;
-
                         default:
                             System.out.println(hit.getIndex());
                             break;
@@ -128,10 +108,6 @@ public class SearchController {
             e.printStackTrace();
             return null;
         }
-
-        // result.put(search3);
-
-
     }
 
 

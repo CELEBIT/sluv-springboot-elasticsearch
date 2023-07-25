@@ -20,9 +20,6 @@ public class IndexService {
     public IndexService(RestHighLevelClient client) { this.client = client; }
     private static final Logger LOG = LoggerFactory.getLogger(Util.class);
 
-//    @PostConstruct
-//    public void createIndices() { createIndexes(false); }
-
     private String loadMappings(String indexName) {
         final String mappings = Util.loadAsString("static/mappings/"+indexName+".json");
         if (mappings == null) {
@@ -32,7 +29,7 @@ public class IndexService {
         return mappings;
     }
 
-    //인덱스 생성
+    // 인덱스 생성
     public void createIndexes(final boolean deleteExisting) {
         for (int i = 1; i < 4; i++) {
             String settings = Util.loadAsString("static/search" + Integer.toString(i) + "_settings.json");

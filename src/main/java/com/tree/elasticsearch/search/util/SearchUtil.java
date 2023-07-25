@@ -8,34 +8,9 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 
 public class SearchUtil {
-
     private SearchUtil(){}
 
-
-    // for search1
-    public static SearchRequest forItemName(final SearchRequestDTO dto){
-        if (dto == null){
-            return null;
-        }
-        try {
-            final String searchTerm = dto.getSearchTerm();
-            final QueryBuilder query1 = QueryBuilders.matchQuery("name", searchTerm);
-
-
-            BoolQueryBuilder boolQuery = QueryBuilders.boolQuery()
-                    .should(query1)
-                    .minimumShouldMatch(1);
-            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder().query(boolQuery).trackTotalHits(true).size(1000);
-            SearchRequest request = new SearchRequest("search1");
-            request.source(searchSourceBuilder);
-            return request;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
-    //boost 사용하기
+    //item 검색
     public static SearchRequest firstSearch1(final SearchRequestDTO dto){
         if (dto == null){
             return null;
@@ -114,7 +89,7 @@ public class SearchUtil {
     }
 
 
-    // for search2
+    // 질문 검색
     public static SearchRequest firstSearch2(final SearchRequestDTO dto){
         if (dto == null) return null;
         try {
@@ -158,7 +133,7 @@ public class SearchUtil {
         }
     }
 
-    // for search3
+    // 유저 검색
     public static SearchRequest firstSearch3(final SearchRequestDTO dto){
         if (dto == null) return null;
         try {
@@ -180,5 +155,4 @@ public class SearchUtil {
             return null;
         }
     }
-
 }

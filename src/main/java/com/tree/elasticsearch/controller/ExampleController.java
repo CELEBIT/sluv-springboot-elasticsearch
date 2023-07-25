@@ -39,7 +39,6 @@ public class ExampleController {
         }
 
         model.addAttribute("test", test);
-
         return "example";
     }
 

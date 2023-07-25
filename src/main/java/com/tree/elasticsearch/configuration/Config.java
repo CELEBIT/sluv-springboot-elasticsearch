@@ -31,12 +31,6 @@ public class Config extends AbstractElasticsearchConfiguration {
     @Value("${elasticsearch.password}")
     public String elasticsearchPassword;
 
-    //    @Bean
-//    @Override
-//    public RestHighLevelClient elasticsearchClient() {
-//        final ClientConfiguration config = ClientConfiguration.builder().connectedTo(elasticsearchUrl).withConnectTimeout(30000).withConnectTimeout(30000).build();
-//        return RestClients.create(config).rest();
-//    }
     @Bean
     @Override
     public RestHighLevelClient elasticsearchClient() {
