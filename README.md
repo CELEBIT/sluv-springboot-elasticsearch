@@ -2,6 +2,14 @@
 [sluv] 의 내부 검색 엔진 서비스입니다. 현재 아이템 검색, 질문 검색, 유저 검색 기능을 제공하거 전문 검색, 구문 검색, 다중 단어 검색, 동의어 검색 등의 기능을 제공합니다.
 restful api로 개발되었으며 스럽 서비스 내부에서 해당 api를 호출하여 사용합니다.
 
+![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/29e74dca-dbe4-4047-91df-e728a27d2a2d)
+![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/2291f849-8d5f-49f0-98d9-a1620c5886ee)
+![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/2e0a2c03-39d5-4981-a51e-01aef99ac2d9)
+![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/0df8ed04-5e98-4d80-8810-5c5fd444d1f7)
+![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/63f834f0-f00a-47b5-842c-4a81ba99e0ac)
+![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/fdb7d3b0-a57d-480e-8f0e-8b2b85d30ba8)
+![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/48b4c275-1e43-457b-8167-9bac294b69a9)
+
 
 ## DEV version
 - Java : OpenJDK 17
