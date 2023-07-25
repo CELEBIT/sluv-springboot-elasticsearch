@@ -1,6 +1,6 @@
-## SLUV_SEARCH_ENGINE
+# SLUV_SEARCH_ENGINE
 
-##Introduction
+## Introduction
 연예인의 아이템을 공유하는 SLUV 서비스입니다. 
 
 ![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/29e74dca-dbe4-4047-91df-e728a27d2a2d)
