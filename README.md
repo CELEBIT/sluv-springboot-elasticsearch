@@ -1,9 +1,9 @@
 # sluv-springboot-elasticsearch
-
+본 코드는 ios, android 어플리케이션 스럽의 검색엔진 개발 코드입니다. (ver.2.0)
 
 
 ## Introduction
-연예인의 아이템을 공유하는 SLUV 서비스입니다.
+연예인의 아이템을 공유하는 SLUV 서비스입니다. 손민수 템 정보를 검색하는 과정 중 어려움을 해소해줍니다. 
 
 ![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/29e74dca-dbe4-4047-91df-e728a27d2a2d)
 ![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/2291f849-8d5f-49f0-98d9-a1620c5886ee)
@@ -16,15 +16,14 @@
 ![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/0df8ed04-5e98-4d80-8810-5c5fd444d1f7)
 ![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/63f834f0-f00a-47b5-842c-4a81ba99e0ac)
 
-⛳️
-
-검색 엔진 goal) 전문 검색 가능, 동의어 검색 가능, 속도 개선, 우선순위 검색 가능
+- 아쉬운 성능의 베타버전 검색 기능을 보안하고자 검색 엔진이 개발되었습니다.
+- 전문 검색 가능, 동의어 검색 가능, 속도 개선, 우선순위 검색이 가능합니다.
 
 
 ## ARCHITECTURE
 ![image](https://github.com/CELEBIT/sluv-springboot-elasticsearch/assets/81170119/fdb7d3b0-a57d-480e-8f0e-8b2b85d30ba8)
 
-AWS 배포
+AWS 스펙
 - 인스턴스 유형 : t2.medium(CPU : 2core, RAM : 4GB, Storage : 40GB)
 - 비용 : 시간당 0.0576 USD
 - AMI : Ubuntu Server 20.04
@@ -97,6 +96,7 @@ AWS 배포
 
 [인덱스 초기화]
 /search/resetAllIndexes
+
 
 
 ## 검색 엔진 사용 영상
